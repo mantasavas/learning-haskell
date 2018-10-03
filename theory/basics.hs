@@ -174,3 +174,33 @@ fewMoves = MsgDict [
     , ("prev", firstMove)
   ]
 
+
+-- data type: Extinguisher
+-- data value: Extinguishers
+data Extinguisher = Extinguishers {
+    tipas :: Tipas
+  , talpa :: Int
+} deriving Show
+
+defaultE10r :: Extinguisher
+defaultE10r = Extinguishers {tipas = C, talpa = 5}
+
+-- It automatically generates getters and setters, so we can simply use to get value:
+-- talpa defaultE10r
+
+
+-- data List = Nil | Cons Integer List
+--   deriving Show
+
+-- constructor Cons takes two arguments:
+-- a - integer
+-- List a - because this constructor returns List a type value, it can be passed as parameter to constructor as if recursion
+-- And returns List a
+data List a = Nil | Cons a (List a)
+  deriving Show
+
+
+-- emptyList = Nil
+-- oneElList = Cons 1 emptyList
+-- twoElList = Cons 2 oneElList
+-- threeElList = Cons 3 twoElList
